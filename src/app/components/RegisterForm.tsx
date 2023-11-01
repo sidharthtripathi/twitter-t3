@@ -54,24 +54,24 @@ function RegisterForm() {
     <>
     <form className="space-y-4 md:space-y-3" onSubmit={handleSubmit}>
                   <div>
-                      <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
-                      <input ref = {emailRef} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  " placeholder="name@company.com" required={true}/>
+                      <label htmlFor="email" className="bloc mb-2 text-sm font-medium text-white ">Email</label>
+                      <input ref = {emailRef} type="email" name="email" id="email" className="block  outline-none bg-slate-900 w-full rounded-md  p-2 text-gray-300 shadow-sm sm:text-sm sm:leading-6" placeholder="name@company.com" required={true}/>
                   </div>
                   <div>
-                      <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
-                      <input ref = {usernameRef} type="text" name="username" id="usename" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  " placeholder="johndoe123" required={true}/>
+                      <label htmlFor="username" className="bloc mb-2 text-sm font-medium text-white ">Username</label>
+                      <input ref = {usernameRef} type="text" name="username" id="usename" className="block  outline-none bg-slate-900 w-full rounded-md  p-2 text-gray-300 shadow-sm sm:text-sm sm:leading-6" placeholder="johndoe123" required={true}/>
                   </div>
                   <div>
-                      <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 ">Full Name</label>
-                      <input ref = {nameRef} type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  " placeholder="John Doe" required={true}/>
+                      <label htmlFor="name" className="bloc mb-2 text-sm font-medium text-white ">Full Name</label>
+                      <input ref = {nameRef} type="text" name="name" id="name" className="block  outline-none bg-slate-900 w-full rounded-md  p-2 text-gray-300 shadow-sm sm:text-sm sm:leading-6" placeholder="John Doe" required={true}/>
                   </div>
                   <div>
-                      <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
-                      <input ref = {passwordRef} type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  " required={true}/>
+                      <label htmlFor="password" className="bloc mb-2 text-sm font-medium text-white ">Password</label>
+                      <input ref = {passwordRef} type="password" name="password" id="password" placeholder="••••••••" className="block  outline-none bg-slate-900 w-full rounded-md  p-2 text-gray-300 shadow-sm sm:text-sm sm:leading-6" required={true}/>
                   </div>
                   <div>
-                      <label htmlFor="confirm-password" className="block mb-2 text-sm font-medium text-gray-900 ">Confirm password</label>
-                      <input ref = {confirmPasswordRef} type="password" name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required={true}/>
+                      <label htmlFor="confirm-password" className="block mb-2 text-sm font-medium text-white ">Confirm password</label>
+                      <input ref = {confirmPasswordRef} type="password" name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-slate-900  text-white sm:text-sm rounded-lg  block w-full p-2.5 " required={true}/>
                   </div>
                   
                   <button disabled = {loading} style={{cursor : loading ? "wait": "pointer"}} type="submit" className="w-full  text-white bg-[#03A9F4] hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Create an account</button>

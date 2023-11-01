@@ -5,8 +5,8 @@ import Provider from './Provider'
 
 
 export const metadata: Metadata = {
-  title: 'Reddit',
-  description: 'Reddit clone',
+  title: 'Twitter',
+  description: 'Twitter clone',
 }
 
 export default function RootLayout({

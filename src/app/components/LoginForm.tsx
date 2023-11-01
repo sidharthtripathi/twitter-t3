@@ -35,9 +35,9 @@ function LoginForm() {
     }
     return (
         <>
-            <form className="space-y-6 border shadow-sm rounded-md p-4" onSubmit={handleSubmit}>
+            <form className="space-y-6 border border-slate-700 shadow-lg shadow-slate-700 rounded-md p-4 " onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
                         Email address
                     </label>
                     <div className="mt-2">
@@ -49,14 +49,14 @@ function LoginForm() {
                             autoComplete="email"
                             required
                             placeholder='email@company.com'
-                            className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block bg-slate-900 outline-none border-none w-full rounded-md border-0 p-2 text-gray-300 shadow-sm  sm:text-sm sm:leading-6"
                         />
                     </div>
                 </div>
 
                 <div>
                     <div className="flex items-center justify-between">
-                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
                             Password
                         </label>
                         <div className="text-sm">
@@ -74,7 +74,7 @@ function LoginForm() {
                             type="password"
                             autoComplete="current-password"
                             required
-                            className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  outline-none bg-slate-900 w-full rounded-md  p-2 text-gray-300 shadow-sm sm:text-sm sm:leading-6"
                         />
                     </div>
                 </div>

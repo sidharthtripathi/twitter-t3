@@ -17,10 +17,10 @@ export const metadata = {
 export default function page() {
     return (
         <>
-            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 animate__animated animate__fadeIn">
+            <div className="bg-black flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 ">
                 <div className="flex flex-col items-center sm:mx-auto sm:w-full sm:max-w-sm">
                     <TwitterLogo />
-                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
                         Sign in to your account
                     </h2>
                 </div>

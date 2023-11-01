@@ -13,7 +13,7 @@ async function Navbar({ className }: Props) {
   const session = await getServerSession(authOptions)
   
   return (
-    <div className={className + " text-white text-2xl sm:space-y-4 p-2 "}>
+    <div className={className + " text-white text-xl sm:space-y-4 p-2 px-3 "}>
       <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer'>
         <AiOutlineHome />
         <span className='font-bold hidden sm:block'>Home</span>
