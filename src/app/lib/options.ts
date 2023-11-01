@@ -3,6 +3,7 @@ import { compare } from 'bcrypt'
 import { prisma } from './db'
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from 'next-auth/providers/google'
+import { removeAt } from "./removeAt";
 export const authOptions: NextAuthOptions = {
 	providers: [
 		CredentialsProvider({
@@ -55,13 +56,33 @@ export const authOptions: NextAuthOptions = {
 		})
 	],
 	callbacks: {
-		jwt({ token, user }) {
-			const u: any = user as unknown
+		async jwt({ token, user }) {
 			if (user) {
-				return {
-					...token,
-					id: u.id,
-					username: u.username
+				console.log(user)
+				const pUser = await prisma.user.findUnique({
+					where : {email : user.email as string}
+				})
+				if(!pUser){
+					const newUser = await prisma.user.create({
+						data : {
+							email : user.email as string,
+							name : user.name as string,
+							username : removeAt(user.email as string),
+							image : user.image as string,
+						}
+					})
+					return {
+						...token,
+						id: newUser.id,
+						username: newUser.username
+					}
+				}
+				else{
+					return {
+						...token,
+						id : pUser.id,
+						username : pUser.username
+					}
 				}
 			}
 			return token

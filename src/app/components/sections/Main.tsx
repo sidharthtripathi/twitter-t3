@@ -24,7 +24,7 @@ async function Main({ className }: Props) {
           />
         </div>
         <div className='flex justify-between items-center mt-3'>
-          <div className="flex text-white w-full space-x-2 items-center text-xl">
+          <div className="flex text-white w-full space-x-3 items-center text-xl">
             <BiImageAdd className='cursor-pointer' />
             <BsFiletypeGif className='cursor-pointer' />
             <BsEmojiLaughing className='cursor-pointer ' />
