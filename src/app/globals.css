@@ -6,3 +6,34 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: black;
+}
+
+/* Hide the vertical scrollbar */
+::-webkit-scrollbar {
+    display: none; /* For Chrome and Safari */
+  }
+  
+  /* Hide the horizontal scrollbar in Chrome and Safari */
+  ::-webkit-scrollbar-horizontal {
+    display: none;
+  }
+  
+  /* Hide the horizontal scrollbar in Firefox */
+  * {
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  /* Hide the vertical scrollbar in Firefox */
+  * {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent; /* For Firefox */
+  }
+  
+  /* Hide the scrollbar in Internet Explorer and Edge */
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  

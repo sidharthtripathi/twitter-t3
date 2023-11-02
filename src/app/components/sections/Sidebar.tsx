@@ -5,11 +5,11 @@ interface Props {
 }
 function Sidebar({ className }: Props) {
   return (
-    <div className={className + " p-2 px-6"}>
-      <div className='flex justify-center'>
-        <input type="text" className=' p-2 px-4 bg-gray-700 rounded-full text-white' placeholder='search..' />
+    <div className={className + " flex-col items-center p-2 "} >
+      <div >
+        <input type="text" className='py-2 px-3 w-full bg-gray-700 rounded-full text-white' placeholder='search..' />
       </div>
-      <div className='mt-3 shadow-sm bg-gray-800 py-2 px-4 rounded-2xl'>
+      <div className='w-fit py-2 px-4 mt-3 shadow-sm bg-gray-800 rounded-2xl'>
         <h1 className='font-bold text-xl mb-4 text-white'>Who to Follow</h1>
         <div className='space-y-4'>
           <UserCard/>

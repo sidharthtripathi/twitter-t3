@@ -1,4 +1,4 @@
-
+import Timeline from '../Timeline'
 interface Props {
   className?: string
 }
@@ -11,7 +11,7 @@ import { authOptions } from '@/app/lib/options'
 async function Main({ className }: Props) {
   const session = await getServerSession(authOptions)
   return (
-    <div className={className + " p-2 border-x border-x-slate-500"}>
+    <div className={className + " pt-2 border-x border-x-slate-500"}>
       <div className='border-b pb-4 border-b-slate-600'>
         <div className="flex space-x-4 items-center">
           <img
@@ -35,6 +35,7 @@ async function Main({ className }: Props) {
           <button className="bg-blue-500 hover:bg-blue-700 duration-100 text-white font-bold px-4 py-2 rounded-full">Post</button>
         </div>
       </div>
+      <Timeline/>
     </div>
   )
 

@@ -13,34 +13,34 @@ async function Navbar({ className }: Props) {
   const session = await getServerSession(authOptions)
   
   return (
-    <div className={className + " text-white text-xl sm:space-y-4 p-2 px-3 "}>
-      <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer'>
+    <div className={className + " text-white font-bold text-xl md:text-base "}>
+      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
         <AiOutlineHome />
-        <span className='font-bold hidden sm:block'>Home</span>
+        <span className=' ml-4 hidden md:block'>Home</span>
       </div>
-      <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer '>
+      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer '>
         <AiOutlineSearch />
-        <span className='font-bold hidden sm:block' >Search</span>
+        <span className=' ml-4 hidden md:block' >Search</span>
       </div>
-      <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer'>
+      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
         <AiOutlineBell />
-        <span className='font-bold hidden sm:block'>Notification</span>
+        <span className=' ml-4 hidden md:block'>Notification</span>
       </div>
-      <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer'>
+      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
         <AiOutlineMail />
-        <span className='font-bold hidden sm:block'>Messages</span>
+        <span className=' ml-4 hidden md:block'>Messages</span>
       </div>
-      <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer'>
+      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
         <BsBookmark />
-        <span className='font-bold hidden sm:block'>Bookmark</span>
+        <span className=' ml-4 hidden md:block'>Bookmark</span>
       </div>
-      <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer'>
+      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
         <AiOutlineUser />
-        <span className='font-bold hidden sm:block'>Profile</span>
+        <span className=' ml-4 hidden md:block'>Profile</span>
       </div>
-      <div className='flex items-center space-x-3 justify-center w-full hover:bg-gray-800 py-2 rounded-full cursor-pointer'>
+      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
         < AiOutlineSetting />
-        <span className='font-bold hidden sm:block'>More</span>
+        <span className=' ml-4 hidden md:block'>More</span>
       </div>
 
       {session?.user ?  <LogoutButton/> : <LoginButton/>}
