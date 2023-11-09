@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import 'animate.css'
 import Provider from './Provider'
+import { Toaster } from "@/components/ui/toaster"
 
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
         <body>
 
           {children}
+          <Toaster />
         </body>
       </Provider>
     </html>

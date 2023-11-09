@@ -11,9 +11,36 @@ datasource db {
 
 model User{
   id String @id @default(uuid())
-  email String @unique
+  email String @unique 
   name String
   username String @unique
   password String?
   image String @default("https://seeklogo.com/images/M/microsoft-account-logo-2E31F79058-seeklogo.com.png")
+
+  tweets Tweet[] @relation("createdTweet")
+  likedTweets Tweet[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([username,email])
+}
+
+model Tweet{
+  id String @id @default(uuid())
+  tweet String
+  authorId String
+  author User @relation("createdTweet",fields: [authorId],references: [id])
+  likes User[]
+  comments Comment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Comment{
+  id String @id @default(uuid())
+  comment String
+  tweetId String
+  tweet Tweet @relation(references: [id],fields: [tweetId])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

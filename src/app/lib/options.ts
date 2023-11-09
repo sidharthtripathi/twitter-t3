@@ -58,11 +58,13 @@ export const authOptions: NextAuthOptions = {
 	callbacks: {
 		async jwt({ token, user }) {
 			if (user) {
+				// cuz we want to create oauth user in db
 				
-				const pUser = await prisma.user.findUnique({
+				const dbUser = await prisma.user.findUnique({
 					where : {email : user.email as string}
 				})
-				if(!pUser){
+				if(!dbUser){
+					// creating user in db and setting returning token
 					const newUser = await prisma.user.create({
 						data : {
 							email : user.email as string,
@@ -80,8 +82,8 @@ export const authOptions: NextAuthOptions = {
 				else{
 					return {
 						...token,
-						id : pUser.id,
-						username : pUser.username
+						id : dbUser.id,
+						username : dbUser.username
 					}
 				}
 			}

@@ -2,7 +2,9 @@ import React from 'react'
 import Navbar from './components/sections/Navbar'
 import Main from './components/sections/Main'
 import Sidebar from './components/sections/Sidebar'
-function page() {
+import { getServerSession } from 'next-auth'
+import { authOptions } from './lib/options'
+async function page() {
   return (
     <div className='w-screen h-screen flex'>
       <Navbar className='sm:w-[10%] md:w-[20%] sm:relative sm:block w-screen bg-black flex flex-row fixed bottom-0 '/>

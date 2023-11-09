@@ -9,6 +9,7 @@ interface User {
 }
 export async function POST(req: NextRequest) {
     const data: User = await req.json();
+    console.log(data)
     try {
         const newUser = await prisma.user.create({
             data: {

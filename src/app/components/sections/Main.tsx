@@ -1,4 +1,8 @@
+
 import Timeline from '../Timeline'
+import TextArea from '../TextArea'
+
+
 interface Props {
   className?: string
 }
@@ -10,6 +14,8 @@ import { authOptions } from '@/app/lib/options'
 
 async function Main({ className }: Props) {
   const session = await getServerSession(authOptions)
+ 
+
   return (
     <div className={className + " pt-2 border-x border-x-slate-500"}>
       <div className='border-b pb-4 border-b-slate-600'>
@@ -19,9 +25,11 @@ async function Main({ className }: Props) {
             alt="user profile"
             className="rounded-full w-12"
           />
-          <input type="text" placeholder="what's on your mind..."
+          {/* <input type="text" placeholder="what's on your mind..."
             className="px-3 py-4 w-full bg-slate-700 text-white rounded-2xl"
-          />
+          /> */}
+          <TextArea/>
+
         </div>
         <div className='flex justify-between items-center mt-3'>
           <div className="flex text-white w-full space-x-3 items-center text-xl">
@@ -32,7 +40,7 @@ async function Main({ className }: Props) {
             <AiOutlineCalendar className='cursor-pointer ' />
             <BiLocationPlus className='cursor-pointer ' title='location' />
           </div>
-          <button className="bg-blue-500 hover:bg-blue-700 duration-100 text-white font-bold px-4 py-2 rounded-full">Post</button>
+          
         </div>
       </div>
       <Timeline/>
