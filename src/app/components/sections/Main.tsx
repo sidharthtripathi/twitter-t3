@@ -1,49 +1,25 @@
-
-import Timeline from '../Timeline'
-import TextArea from '../TextArea'
-
-
-interface Props {
-  className?: string
-}
-import { BiImageAdd, BiPoll , BiLocationPlus } from 'react-icons/bi'
-import { BsFiletypeGif, BsEmojiLaughing } from 'react-icons/bs'
-import { AiOutlineCalendar } from 'react-icons/ai'
+import PostTweet from '../PostTweet'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/lib/options'
-
-async function Main({ className }: Props) {
+import { authOptions } from '@/lib/options'
+import Timeline from '../Timeline'
+async function Main() {
   const session = await getServerSession(authOptions)
  
 
   return (
-    <div className={className + " pt-2 border-x border-x-slate-500"}>
-      <div className='border-b pb-4 border-b-slate-600'>
-        <div className="flex space-x-4 items-center">
-          <img
-            src={session ? session.user?.image as string : "https://seeklogo.com/images/M/microsoft-account-logo-2E31F79058-seeklogo.com.png"}
-            alt="user profile"
-            className="rounded-full w-12"
-          />
-          {/* <input type="text" placeholder="what's on your mind..."
-            className="px-3 py-4 w-full bg-slate-700 text-white rounded-2xl"
-          /> */}
-          <TextArea/>
-
-        </div>
-        <div className='flex justify-between items-center mt-3'>
-          <div className="flex text-white w-full space-x-3 items-center text-xl">
-            <BiImageAdd className='cursor-pointer' />
-            <BsFiletypeGif className='cursor-pointer' />
-            <BsEmojiLaughing className='cursor-pointer ' />
-            <BiPoll className='cursor-pointer ' />
-            <AiOutlineCalendar className='cursor-pointer ' />
-            <BiLocationPlus className='cursor-pointer ' title='location' />
-          </div>
-          
-        </div>
+    <div className="w-1/2 overflow-y-scroll grow-[5] px-2">
+     <div className='flex p-2 space-x-2'>
+      <div className='flex justify-center items-start'>
+        <img src={session?.user.image} alt="userprofile"
+          className='aspect-square h-12 w-12 rounded-full'
+        />
       </div>
-      <Timeline/>
+      
+        <PostTweet/>
+        
+ 
+     </div>
+     <Timeline/>
     </div>
   )
 

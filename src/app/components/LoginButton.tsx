@@ -2,9 +2,9 @@ import Link from "next/link"
 import { BiLogIn } from "react-icons/bi"
 function LoginButton() {
   return (
-    <Link  href = '/login' className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-full cursor-pointer'>
+    <Link  href = '/login' className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
     < BiLogIn />
-    <span className='ml-4 hidden md:block'>Login</span>
+    <span className='hidden sm:block'>Login</span>
   </Link>
   )
 }

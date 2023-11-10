@@ -3,44 +3,41 @@ import { AiOutlineHome, AiOutlineSearch, AiOutlineBell, AiOutlineMail, AiOutline
 import { BsBookmark } from 'react-icons/bs'
 import LogoutButton from '../LogoutButton'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/lib/options'
+import { authOptions } from '@/lib/options'
 import LoginButton from '../LoginButton'
 
-interface Props {
-  className?: string
-}
-async function Navbar({ className }: Props) {
+async function Navbar() {
   const session = await getServerSession(authOptions)
   
   return (
-    <div className={className + " text-white font-bold text-xl md:text-base "}>
-      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
+    <div className='flex justify-around shrink-0 fixed inset-x-0 bottom-0 py-1 text-2xl sm:text-base sm:static sm:flex-col sm:justify-start sm:space-y-6 md:grow-[2] '>
+      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2 '>
         <AiOutlineHome />
-        <span className=' ml-4 hidden md:block'>Home</span>
+        <span className='hidden sm:block'>Home</span>
       </div>
-      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer '>
+      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2 '>
         <AiOutlineSearch />
-        <span className=' ml-4 hidden md:block' >Search</span>
+        <span className='hidden sm:block ' >Search</span>
       </div>
-      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
+      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         <AiOutlineBell />
-        <span className=' ml-4 hidden md:block'>Notification</span>
+        <span className='hidden sm:block '>Notification</span>
       </div>
-      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
+      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         <AiOutlineMail />
-        <span className=' ml-4 hidden md:block'>Messages</span>
+        <span className='hidden sm:block '>Messages</span>
       </div>
-      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
+      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         <BsBookmark />
-        <span className=' ml-4 hidden md:block'>Bookmark</span>
+        <span className='hidden sm:block '>Bookmark</span>
       </div>
-      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
+      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         <AiOutlineUser />
-        <span className=' ml-4 hidden md:block'>Profile</span>
+        <span className='hidden sm:block '>Profile</span>
       </div>
-      <div className='flex pl-3 items-center md:justify-start justify-center w-full hover:bg-gray-800 duration-150 py-2 rounded-lg cursor-pointer'>
+      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         < AiOutlineSetting />
-        <span className=' ml-4 hidden md:block'>More</span>
+        <span className='hidden sm:block '>More</span>
       </div>
 
       {session?.user ?  <LogoutButton/> : <LoginButton/>}

@@ -1,6 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import { compare } from 'bcrypt'
-import { prisma } from './db'
+import { db } from './db'
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from 'next-auth/providers/google'
 import { removeAt } from "./removeAt";
@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
 			},
 			async authorize(credentials) {
 				try{
-				const user = await prisma.user.findFirst({
+				const user = await db.user.findFirst({
 					where: {
 						email: credentials?.email
 					}
@@ -60,12 +60,12 @@ export const authOptions: NextAuthOptions = {
 			if (user) {
 				// cuz we want to create oauth user in db
 				
-				const dbUser = await prisma.user.findUnique({
+				const dbUser = await db.user.findUnique({
 					where : {email : user.email as string}
 				})
 				if(!dbUser){
 					// creating user in db and setting returning token
-					const newUser = await prisma.user.create({
+					const newUser = await db.user.create({
 						data : {
 							email : user.email as string,
 							name : user.name as string,

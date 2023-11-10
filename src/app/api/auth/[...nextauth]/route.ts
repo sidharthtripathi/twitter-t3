@@ -1,4 +1,4 @@
 import NextAuth, { getServerSession } from 'next-auth'
-import {authOptions} from '@/app/lib/options'
+import {authOptions} from '@/lib/options'
 const handler = NextAuth(authOptions)
 export {handler as GET , handler as POST}

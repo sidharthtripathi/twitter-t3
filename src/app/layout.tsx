@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 import 'animate.css'
 import Provider from './Provider'
-import { Toaster } from "@/components/ui/toaster"
+
+import { Toaster } from "@/app/components/ui/toaster"
+
 
 
 export const metadata: Metadata = {
@@ -16,12 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className = 'dark'>
 
       <Provider>
-        <body>
-
+        <body className=' h-screen w-screen  dark:bg-black  dark:text-white'>
           {children}
+          
           <Toaster />
         </body>
       </Provider>

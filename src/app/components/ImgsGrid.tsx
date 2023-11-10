@@ -13,7 +13,7 @@ function ImgsGrid() {
         {
             imgs.map((img,i)=>(
                 <img src = {img} key = {i}
-                className="object-cover w-36 h-36 grow rounded"
+                className="object-cover w-36 h-36 grow rounded-lg"
                 />
             ))
         }

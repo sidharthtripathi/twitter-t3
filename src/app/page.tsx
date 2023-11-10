@@ -1,16 +1,15 @@
-import React from 'react'
-import Navbar from './components/sections/Navbar'
-import Main from './components/sections/Main'
-import Sidebar from './components/sections/Sidebar'
-import { getServerSession } from 'next-auth'
-import { authOptions } from './lib/options'
+import Main from "./components/sections/Main"
+import Navbar from "./components/sections/Navbar"
+import Sidebar from "./components/sections/Sidebar"
+
 async function page() {
   return (
-    <div className='w-screen h-screen flex'>
-      <Navbar className='sm:w-[10%] md:w-[20%] sm:relative sm:block w-screen bg-black flex flex-row fixed bottom-0 '/>
-      <Main className='w-[60%] grow overflow-y-scroll px-6'/>
-      <Sidebar className='w-[20%] hidden xl:flex'/>
+    <div className="w-full h-full flex p-2 relative justify-around">
+    <Navbar/>
+    <Main/>
+    <Sidebar/>
     </div>
+    
   )
 }
 

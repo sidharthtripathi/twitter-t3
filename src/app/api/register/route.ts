@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from '@/app/lib/db'
+import { db } from '@/lib/db'
 import { hash } from "bcrypt";
 interface User {
     name: string,
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     const data: User = await req.json();
     console.log(data)
     try {
-        const newUser = await prisma.user.create({
+        const newUser = await db.user.create({
             data: {
                 name: data.name,
                 email: data.email,

@@ -9,10 +9,10 @@ function UserCard() {
              className="rounded-full w-10" 
              />
             <div>
-                <p className="text-white">name</p>
+                <p className="dark:text-white">name</p>
                 <Link href = '#' className="text-gray-400">@username</Link>
             </div>
-            <button className="bg-white px-2 py-1 rounded-full text-sm font-bold">Follow</button>
+            <button className="  px-2 py-1 rounded-full text-sm font-bold">Follow</button>
         </div>
     )
 }

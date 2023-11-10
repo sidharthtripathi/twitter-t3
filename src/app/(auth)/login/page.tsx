@@ -16,30 +16,29 @@ export const metadata = {
 }
 export default function page() {
     return (
-        <>
-            <div className="bg-black flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 ">
-                <div className="flex flex-col items-center sm:mx-auto sm:w-full sm:max-w-sm">
-                    <Link href = '/'><TwitterLogo /></Link>
-                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-                        Sign in to your account
-                    </h2>
+      
+        <section className="bg-black">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
+               <Link href = '/'><TwitterLogo/></Link>
+                
+                
+            </a>
+            <div className="w-full rounded-lg md:mt-0 sm:max-w-md xl:p-0  ">
+                <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl ">
+                       Login
+                    </h1>
+                    <LoginForm/>  
+                    <p className='text-center text-blue-300 hover:underline'>
+                    <Link href={'/signup'}>Register</Link>
+                    </p> 
+                    
+                    
                 </div>
-
-                <div className="relative mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-
-                    <LoginForm />
-
-                    <p className="mt-10 text-center text-sm text-gray-500">
-                        Not a member?{' '}
-                        <Link href="/signup" className="font-semibold leading-6 text-[#03A9F4] hover:text-blue-500">
-                            Signup here
-                        </Link>
-                    </p>
-
-
-                </div>
-
             </div>
-        </>
+        </div>
+      </section>
+        
     )
 }
