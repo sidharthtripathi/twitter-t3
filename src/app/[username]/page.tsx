@@ -23,7 +23,8 @@ async function page({params : {username}} : Props) {
       username : true,
       name : true,
       image : true,
-      id : true
+      id : true,
+      about : true
     }
   })
   if(!user) return notFound()
@@ -45,7 +46,7 @@ async function page({params : {username}} : Props) {
           className="w-full h-44 object-cover"
           />
           <img src={user.image} alt="userprofile" 
-            className="absolute bottom-0 translate-y-1/2 left-1 rounded-full w-30"
+            className="absolute bottom-0 translate-y-1/2 left-1 rounded-full w-24 h-24"
           />
         </div>
 
@@ -62,6 +63,11 @@ async function page({params : {username}} : Props) {
         </div>
 
         }
+        <div className="mt-3">
+          <h1 className="font-bold text-2xl">{user.name}</h1>
+          <h3 className="text-gray-300">@{user.username}</h3>
+          <p className="mt-6">{user.about}</p>
+        </div>
       </div>
 
       {/* user timeline */}
@@ -71,7 +77,9 @@ async function page({params : {username}} : Props) {
       ))}
       </div>
 
-
+      <p className="h-20 text-center font-xl font-bold mt-5">
+        End of Timeline 🥺
+      </p>
     </div>
   )
 }

@@ -7,8 +7,6 @@ import Sidebar from './components/sections/Sidebar'
 import { Toaster } from "@/app/components/ui/toaster"
 
 
-
-
 export const metadata: Metadata = {
   title: 'Twitter',
   description: 'Twitter clone',
@@ -27,7 +25,7 @@ export default async function RootLayout({
         <body className=' h-screen w-screen flex p-2 relative justify-around dark:bg-black  dark:text-white'>
         <Navbar/>
         {children}
-<Sidebar/>
+        <Sidebar/>
           
           
           <Toaster />

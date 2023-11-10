@@ -17,7 +17,7 @@ interface Props {
 }
 function  Tweet({ userimg = "", name = "", username = "", title = "", imgs = [], stats = 0, likes = 0, retweets = 0 }: Props) {
     return (
-        <div className='flex p-2 space-x-2 rounded-md'>
+        <div className='flex p-2 space-x-2 rounded-md border-b'>
 
             <div className='shrink-0'>
                 <img

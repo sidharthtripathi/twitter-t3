@@ -1,17 +1,21 @@
 import Link from "next/link"
 
-
-function UserCard() {
+interface Props{
+    name? : string
+    username? : string
+    image? : string
+}
+function UserCard({name="name",username="username",image = "https://seeklogo.com/images/M/microsoft-account-logo-2E31F79058-seeklogo.com.png"} : Props) {
     return (
         <div className="flex justify-between items-center space-x-3">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTa31xKmnI6rYS9nSNXJNOewF7o1E49L6r_Q&usqp=CAU"
+            <img src={image}
              alt="userProfile"
              className="rounded-full w-10" 
              />
-            <div>
-                <p className="dark:text-white">name</p>
-                <Link href = '#' className="text-gray-400">@username</Link>
-            </div>
+            <Link href = {`/${username}`} className="hover:underline">
+                <p className="dark:text-white">{name}</p>
+                <span  className="text-gray-400">@{username}</span>
+            </Link>
             <button className="  px-2 py-1 rounded-full text-sm font-bold">Follow</button>
         </div>
     )

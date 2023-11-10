@@ -16,6 +16,7 @@ model User{
   username String @unique
   password String?
   image String @default("https://seeklogo.com/images/M/microsoft-account-logo-2E31F79058-seeklogo.com.png")
+  about String? @default("Hey there, I am on twitter")
 
   tweets Tweet[] @relation("createdTweet")
   likedTweets Tweet[]

@@ -10,12 +10,12 @@ export const authOptions: NextAuthOptions = {
 			name: "credentials",
 			credentials: {
 				email: {
-					label: "email",
+					label: "E-mail",
 					placeholder: "email",
 					type: "email",
 				},
 				password: {
-					label: "password",
+					label: "Password",
 					placeholder: "password",
 					type: "password"
 				}
@@ -101,6 +101,6 @@ export const authOptions: NextAuthOptions = {
 		}
 	},
 	pages : {
-		signIn  : "/login"
+		
 	}
 }
