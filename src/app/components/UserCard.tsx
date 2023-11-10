@@ -12,10 +12,12 @@ function UserCard({name="name",username="username",image = "https://seeklogo.com
              alt="userProfile"
              className="rounded-full w-10" 
              />
+            
             <Link href = {`/${username}`} className="hover:underline">
                 <p className="dark:text-white">{name}</p>
                 <span  className="text-gray-400">@{username}</span>
             </Link>
+            
             <button className="  px-2 py-1 rounded-full text-sm font-bold">Follow</button>
         </div>
     )

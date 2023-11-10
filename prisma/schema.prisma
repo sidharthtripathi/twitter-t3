@@ -29,7 +29,7 @@ model Tweet{
   id String @id @default(uuid())
   tweet String
   authorId String
-  author User @relation("createdTweet",fields: [authorId],references: [id])
+  author User @relation("createdTweet",fields: [authorId],references: [id], onDelete: Cascade)
   likes User[]
   comments Comment[]
 

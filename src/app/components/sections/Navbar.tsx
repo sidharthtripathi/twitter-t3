@@ -6,6 +6,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/options'
 import LoginButton from '../LoginButton'
 import Link from 'next/link'
+import SearchModal from '../SearchModal'
 
 async function Navbar() {
   const session = await getServerSession(authOptions)
@@ -16,10 +17,7 @@ async function Navbar() {
         <AiOutlineHome />
         <span className='hidden sm:block'>Home</span>
       </Link >
-      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2 '>
-        <AiOutlineSearch />
-        <span className='hidden sm:block ' >Search</span>
-      </div>
+      <SearchModal/>
       <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         <AiOutlineBell />
         <span className='hidden sm:block '>Notification</span>

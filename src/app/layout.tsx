@@ -4,7 +4,8 @@ import 'animate.css'
 import Provider from './Provider'
 import Navbar from './components/sections/Navbar'
 import Sidebar from './components/sections/Sidebar'
-import { Toaster } from "@/app/components/ui/toaster"
+import { Toaster } from 'react-hot-toast';
+
 
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default async function RootLayout({
         <Sidebar/>
           
           
-          <Toaster />
+          <Toaster/>
         </body>
       </Provider>
     </html>

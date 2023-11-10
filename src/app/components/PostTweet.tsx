@@ -1,15 +1,10 @@
 "use client"
-import { useToast } from "@/app/components/ui/use-toast"
+import toast from 'react-hot-toast';
 import {useState} from 'react'
 import TextAreaAuto from 'react-textarea-autosize'
 function PostTweet() {
-  const {toast} = useToast()
   const [val,setVal] = useState("")
   async function handleClick() {
-    toast({
-      title : "Created",
-      description : "Your post was created successfully"
-    })
     const payload = {
       title : val
     }
@@ -17,9 +12,11 @@ function PostTweet() {
       method : "POST",
       body : JSON.stringify(payload)
     })
-   console.log(res)
     if(res.ok){
     setVal("")
+    toast.success("Tweet created",{
+      position: "bottom-center"
+    })
     
     }
   }
