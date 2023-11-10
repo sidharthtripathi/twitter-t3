@@ -8,7 +8,7 @@ function PostTweet() {
     const payload = {
       title : val
     }
-    const res = await fetch('http://localhost:3001/api/tweet/create',{
+    const res = await fetch('/api/tweet/create',{
       method : "POST",
       body : JSON.stringify(payload)
     })
