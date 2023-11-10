@@ -5,16 +5,17 @@ import LogoutButton from '../LogoutButton'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/options'
 import LoginButton from '../LoginButton'
+import Link from 'next/link'
 
 async function Navbar() {
   const session = await getServerSession(authOptions)
   
   return (
     <div className='flex justify-around shrink-0 fixed inset-x-0 bottom-0 py-1 text-2xl sm:text-base sm:static sm:flex-col sm:justify-start sm:space-y-6 md:grow-[2] '>
-      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2 '>
+      <Link href={'/'} className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2 '>
         <AiOutlineHome />
         <span className='hidden sm:block'>Home</span>
-      </div>
+      </Link >
       <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2 '>
         <AiOutlineSearch />
         <span className='hidden sm:block ' >Search</span>
@@ -31,10 +32,10 @@ async function Navbar() {
         <BsBookmark />
         <span className='hidden sm:block '>Bookmark</span>
       </div>
-      <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
+      <Link href = {`/${session?.user.username}`} className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         <AiOutlineUser />
         <span className='hidden sm:block '>Profile</span>
-      </div>
+      </Link>
       <div className='flex items-center rounded-md hover:bg-blue-400 cursor-pointer space-x-2 sm:px-2 grow sm:grow-0 justify-center sm:justify-start py-2'>
         < AiOutlineSetting />
         <span className='hidden sm:block '>More</span>

@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className="grid h-screen px-4 bg-white place-content-center dark:bg-gray-900">
+    <div className="grid w-1/2 overflow-y-scroll grow-[5] px-2 bg-white place-content-center dark:bg-gray-900">
     <div className="text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
