@@ -1,8 +1,8 @@
-"use client"
-import toast, { Toaster } from 'react-hot-toast';
-const notify = () => toast.success('Tweet sent 🙌');
+"use client";
+import toast, { Toaster } from "react-hot-toast";
+const notify = () => toast.success("Tweet sent 🙌");
 
- const App = () => {
+const App = () => {
   return (
     <div>
       <button onClick={notify}>Make me a toast</button>
@@ -10,4 +10,4 @@ const notify = () => toast.success('Tweet sent 🙌');
     </div>
   );
 };
-export default App
+export default App;
